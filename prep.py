@@ -17,8 +17,8 @@ _DF() => Returns the expressions of the base.
 	Gets :  The Base.
 	Returns : The expressions of the base, using the dataframe created from the data.training.txt.nosync.txt, as list.
 
-_PAIR() => Pairs the Base Objects with Cell objects. 
-	
+_PAIR() => Pairs the Base Objects with Cell objects.
+
 	Gets : None
 	Returns : The Cell objects and the Base objects within, as list.
 
@@ -48,20 +48,20 @@ def _READ(path):
 	with open(path,"r") as f:
 		return [l.strip() for l in f.readlines()]
 
-def _ID(metadata):	
+def _ID(metadata):
 	sozluk = {}
-	
+
 	CellTypes = list()
-	for i in metadata: 
+	for i in metadata:
 		if "CellID" not in i:
 			for j in range(len(i)):
 				if i[j] == "\t":
 					if i[j:] not in sozluk:
 						sozluk[i[j:]] = i[:j]
 					else:
-						sozluk[i[j:]] += "," + i[:j]	
+						sozluk[i[j:]] += "," + i[:j]
 	return sozluk
-	
+
 def _PAIR():
 	baslangic = time.time()
 	CellTypes = list()
