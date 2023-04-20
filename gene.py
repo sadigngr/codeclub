@@ -9,7 +9,6 @@ import math
 class Cell:
 
 	def __init__(self,Name,Bases = list()):
-<<<<<<< HEAD
 		''''
 		Gets the cell types and gene ids.
 		
@@ -20,31 +19,21 @@ class Cell:
 		GeneIDs as list of ID objects
 		'''
 		
-=======
-
->>>>>>> a4011551b2a2f8552326ba757678d5e956f8c6b1
 		self.Name = Name
 		self.Bases = Bases
 
 	@property
 	def bases(self):
-<<<<<<< HEAD
 
-=======
-		
->>>>>>> a4011551b2a2f8552326ba757678d5e956f8c6b1
 		return self.Bases
 
 	@property
 	def name(self):
-<<<<<<< HEAD
 		''' 
 		Returns the cell type
 
 		Returns : String
 		'''
-=======
->>>>>>> a4011551b2a2f8552326ba757678d5e956f8c6b1
 
 		return self.Name
 
@@ -54,7 +43,11 @@ class Cell:
 class Base:
 
 	def __init__(self,Name = str(),CellType = str(),Expressions = list()):
+		'''
+		Gets the Base name and the list of expressions
 
+		Returns : None
+		'''
 		self.CellType = CellType
 		self.Expressions = Expressions
 		self.Name = Name
@@ -70,12 +63,7 @@ class Base:
 		return self.Name
 	@property
 	def celltype(self):
-<<<<<<< HEAD
 		'''
 		Returns 
 		'''
 		return self.CellType
-=======
-		
-		return self.CellType
->>>>>>> a4011551b2a2f8552326ba757678d5e956f8c6b1
