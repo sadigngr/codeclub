@@ -25,24 +25,30 @@ _PAIR() => Pairs the Base Objects with Cell objects.
 
 '''
 
-from gene import *
+from dataclasses import dataclass
 import pandas as pd
 import time
 import numpy
 from sklearn.svm import SVC
 from sklearn.model_selection import train_test_split
 
+@dataclass
+class Cell:
+	__slots__ = ['name','bases']
+	name : str
+	bases : list
+
+@dataclass
+class Base:
+	__slots__ = ['name','celltype','expressions']
+	name : str
+	celltype : str
+	expressions : list
+
 df = pd.read_table("data.training.txt.nosync.txt")
 print(df.dtypes)
 print(type(df["AGCTTTACACCAAC"][2]))
 print(df.head())
-def timer(func):
-	def wrapper(*args, **kwargs):
-		a = time.time()
-		return func(*args, **kwargs)
-		b = time.time()
-		print(f"Islem {b - a} saniye surdu.")
-	return wrapper
 
 def _READ(path):
 	with open(path,"r") as f:
